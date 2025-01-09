@@ -1,101 +1,166 @@
+import { Button1 } from "@/components/General/Buttons/Button1";
 import Image from "next/image";
+import Link from "next/link";
+import { MdOutlinePrivacyTip } from "react-icons/md";
+import { FaRegEye } from "react-icons/fa6";
+import { FaBullseye } from "react-icons/fa";
+import { UniversityMap } from "@/components/UniversityMap";
+
+
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+	const questions = [
+		{
+			question: "How can QPlug help you?",
+			answer: "something something something..."
+		},
+		{
+			question: "How can QPlug help you?",
+			answer: "something something something..."
+		},
+		{
+			question: "How can QPlug help you?",
+			answer: "something something something..."
+		},
+		{
+			question: "How can QPlug help you?",
+			answer: "something something something..."
+		},
+	]
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+	return (
+		<div className="w-full h-fit min-h-screen">
+			<div className="w-full h-[80vh] flex gap-32 justify-center items-center px-[15%]">
+
+				<div className="w-1/2">
+					<Image src="/plug.avif" width={500} height={500} className="w-full h-fit object-contain top-0 left-0" alt="a" />
+				</div>
+
+				<div className="w-1/2">
+					<h1 className="text-6xl font-bold">Welcome to </h1>
+					<h1 className="text-6xl font-bold pl-8"><span className="text-accent">Q</span><span className="text-secondary">Plug</span></h1>
+					<p className="text-md font-extralight">Dont let plugs get in the way of your studies!</p>
+
+
+					<Button1><a>Get Started</a></Button1>
+
+				</div>
+			</div>
+
+
+			{/* some stats in 3 boxes */}
+			{/* <div className="w-full h-screen flex flex-col justify-center items-start gap-4 flex-auto px-[15%]">
+
+				<h1 className="text-4xl font-extrabold border-slate-500 border-b-2">Its as easy as ...</h1>
+
+				<div className="w-full h-fit flex justify-center items-center gap-8">
+					<div className="p-8 rounded-3xl bg-primary aspect-square w-full h-full flex flex-col hover:-translate-y-4 transition-all duration-100 cursor-pointer">
+						<h1 className="text-2xl font-extrabold">Select a room</h1>
+						<Image src="/room.png" width={500} height={500} className="object-contain w-full h-full min-h-72" alt="a" />
+					</div>
+
+					<div className="p-8 rounded-3xl bg-secondary aspect-square w-full h-fit flex flex-col hover:-translate-y-4 transition-all duration-100 cursor-pointer">
+						<h1 className="text-2xl font-extrabold">Scan a qr code</h1>
+						<Image src="/scan.png" width={500} height={500} className="object-contain w-full h-full min-h-72" alt="a" />
+					</div>
+
+					<div className="p-8 rounded-3xl bg-accent aspect-square w-full h-fit flex flex-col hover:-translate-y-4 transition-all duration-100 cursor-pointer">
+						<h1 className="text-2xl font-extrabold ">Report the problem</h1>
+						<Image src="/Error-unscreen.gif" width={500} height={500} className="object-contain w-full h-full min-h-72" alt="a" />
+					</div>
+				</div>
+			</div> */}
+
+			{/* A univeristy map you can click on the supported universities */}
+			{/* <div className="w-full h-screen flex flex-col justify-center items-center gap-4 flex-auto px-[15%]">
+				<UniversityMap />
+			</div> */}
+
+			{/* show which universities are currently using it */}
+			<div className="w-full h-screen flex flex-col justify-center items-start gap-4 flex-auto px-[15%]">
+				<h1 className="text-4xl font-extrabold border-slate-500 border-b-2">Trusted by ....</h1>	
+
+			</div>
+
+			<div className="w-full h-fit flex gap-16 bg-primary px-[15%] pt-32 pb-16">
+
+				<div className="w-full flex justify-center items-center">
+					<Image src="/cats/smt.png" className="" width={200} height={200} alt="?" />
+				</div>
+
+				<div className="w-full">
+					<p className="text-6xl font-extrabold">Our</p>
+					<p className="text-6xl font-extrabold pl-12">Mission</p>
+					<p className="text-md font-extralight text-wrap pt-4">The aim of this project is to improve student experience at no extra cost, I hope that more projects like this come up taking advantage of many free resources that us students receive but dont take advantage of.</p>
+				</div>
+
+
+			</div>
+
+
+			<div className="w-full h-[70vh] flex items-center gap-16 px-[15%]">
+				<div className="flex flex-col items-center min-h-60">
+					<MdOutlinePrivacyTip className="w-16 h-16" />
+					<p>Privacy</p>
+					<hr className="w-full" />
+					<p className="text-center">We value your privacy, and dont really fancy stealing your cookies! There is no login either, so you are 100% safe on our website!</p>
+				</div>
+
+
+				<hr />
+				
+				<div className="flex flex-col items-center min-h-60">
+					<FaRegEye className="w-16 h-16" />
+					<p>Vision</p>
+					<hr className="w-full"/>
+					<p className="text-center">This is not only just a plug socket finding app, its a movement to encourage like minded people to <span className="font-extrabold text-primary">just do it</span>!</p>
+				</div>
+
+				<hr />
+
+				<div className="flex flex-col items-center min-h-60">
+					<FaBullseye className="w-16 h-16" />
+					<p>Outcome</p>
+					<hr className="w-full"/>
+					<p className="text-center">We aim to help both students and university staff with identifying faulty plug sockets using this platform as a means for open communication about this issue.</p>
+				</div>
+			</div>
+
+			<div className="w-full h-fit flex gap-16 bg-primary px-[15%] pt-32 pb-16">
+				<div className="w-full">
+					<p className="text-6xl font-extrabold">Questions &</p>
+					<p className="text-6xl font-extrabold pl-12">Answers</p>
+					<p className="text-md font-extralight text-wrap pt-4">Have questions? Here you&apos;ll find all the answers to your questions. If there is something missing feel free to reach out to us with absolutely any queries via our email.</p>
+				</div>
+
+				<div className="w-full flex justify-center items-center">
+					<Image src="/cats/smt.png" className="" width={200} height={200} alt="?" />
+				</div>
+			</div>
+
+			<div className="w-full h-fit flex justify-between px-[15%] pt-32 pb-16">
+				<div className="w-fit flex flex-col">
+					<Link href="/" className="text-accent font-semibold text-xl underline">Home</Link>
+					<Link href="/rooms" className="text-accent font-semibold text-xl underline">Rooms</Link>
+					<Link href="/profile" className="text-accent font-semibold text-xl underline">Contact</Link>
+					<Link href="/legal" className="text-accent font-semibold text-xl underline">Legal</Link>
+				</div>
+
+				<div className="w-2/3 h-fit flex flex-col justify-center">
+					<p className="text-2xl text-text font-extrabold pb-4">Questions</p>
+					{
+						questions.map((question, index) => {
+							return (
+								<div key={index} className="flex justify-between w-full pl-4">
+									<div className="border-black border-b-[1px] flex w-full justify-between">
+										<p>{question.question}</p>
+									</div>
+								</div>
+							)
+						})
+					}
+				</div>
+			</div>
+		</div>
+	)
 }

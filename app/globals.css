@@ -2,20 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* :root {
+    --background: #e3e3e3;
+    --primary: #494c50;
+    --secondary: #160094;
+    --accent: #2929d6;
+    --text: #000000;
+	--text-reverse: #FFFFFF;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #1c1c1c;
+        --primary: #afb2b6;
+        --secondary: #816bff;
+        --accent: #2929d6;
+        --text: #FFFFFF;
+		--text-reverse: #000000
+    }
+} */
+
+:root {
+    /* --background: #f7f7f7;
+    --primary: #ffe100;
+    --secondary: #ffd624;
+    --accent: #cc8e00;
+    --text: #757f53;
+	--text-reverse: #a1ac80; */
+	--background: #f7f7f7;
+    --primary: #67849e;
+    --secondary: #aabed1;
+    --accent: #81a6c7;
+    --text: #060606;
+	--text-reverse: #fafafa;
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #020303;
+        --primary: #617f98;
+        --secondary: #2e4356;
+        --accent: #395e7f;
+        --text: #fafafa;
+		--text-reverse: #060606;
+    }
+}
+
+
+
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
 }
