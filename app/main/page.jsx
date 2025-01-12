@@ -10,7 +10,7 @@ import { FaBullseye, FaRegEye } from "react-icons/fa6";
 import { MdExpandMore, MdOutlinePrivacyTip } from "react-icons/md";
 
 
-export default function Home() {
+export default function MainPage() {
 	const questions = [
 		{
 			question: "How can QPlug help you?",
@@ -164,7 +164,7 @@ export default function Home() {
 					</div>
 
 					<div className="w-full flex justify-center items-center">
-						<Image src="/cats/tux.png" className="" width={200} height={200} alt="?" />
+						<Image src="/cats/smt.png" className="" width={200} height={200} alt="?" />
 					</div>
 				</div>
 

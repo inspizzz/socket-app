@@ -2,7 +2,6 @@
 
 import { LuDoorOpen } from "react-icons/lu";
 import Link from "next/link";
-import { Button1 } from "../General/Buttons/Button1";
 import { CiSearch } from "react-icons/ci";
 import { MdOutlineBugReport } from "react-icons/md";
 import { GoReport } from "react-icons/go";
