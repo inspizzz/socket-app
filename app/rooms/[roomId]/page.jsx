@@ -1,12 +1,23 @@
-/**
- * This page will show a specific rooms sockets in a list layout
- * 
- * TODO: In the future, add an image that shows the specific sockets and their locations, think about how to make this versatile for multi university use
- */
-export default function RoomPage() {
+import { useEffect } from "react"
+
+export default function RoomPage({ params }) {
+
+	const [room, setRoom] = useState({})
+	const [sockets, setSockets] = useState([])
+
+	// get the room information
+	useEffect(() => {
+
+	}, [])
+
+	// get the sockets in the room
+	useEffect(() => {
+
+	}, [room])
+
 	return (
-		<div className="w-full h-screen">
-			<h1>Room Page</h1>
+		<div>
+			<h1>room Page</h1>
 		</div>
 	)
 }

@@ -1,5 +1,6 @@
 'use client'
 
+import { Loading } from "@/components/Loading";
 import { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 
@@ -8,22 +9,26 @@ export default function SearchPage() {
 	const [search, setSearch] = useState("")
 	const [results, setResults] = useState([])
 
+	const [university, setUniversity] = useState({})
+	const [building, setBuilding] = useState({})
 
-	const [filterUniversities, setFilterUniversities] = useState(false)
-	const [filterBuildings, setFilterBuildings] = useState(false)
 
 	useEffect(() => {
 		// add a listener to the enter key
 	})
 
 	const executeSearch = () => {
-		console.log("searching")
+		
+		// check if the search is empty in one line
+		if(search === "") return
+
+		// perform search
 	}
 
 
 	return (
-		<div className="w-full h-screen flex flex-col">
-			<div className="w-full h-1/2 bg-gradient-to-r from-primary to-secondary flex flex-col gap-2 justify-center items-center">
+		<div className="w-full h-fit flex flex-col">
+			<div className="w-full h-full bg-gradient-to-r from-primary to-secondary flex flex-col gap-2 justify-center items-center py-[10%]">
 
 				{/* the input box */}
 				<div className="w-1/4 h-fit flex flex-col gap-2">
@@ -43,42 +48,65 @@ export default function SearchPage() {
 
 					{/* the filters box */}
 					<div className="w-fit flex gap-2 justify-evenly">
-						<div className={`${filterUniversities ? "bg-accent shadow-sm shadow-secondary" : "bg-white"} w-fit h-fit py-1 px-2 rounded-full select-none cursor-pointer`} onClick={() => setFilterUniversities(!filterUniversities)}>
-							<p>Universities</p>
+						<div className="w-fit h-fit py-1 px-2 bg-emerald-400 rounded-full select-none cursor-pointer shadow-md">
+							<p>University of Exeter</p>
 						</div>
 
-						<div className={`${filterBuildings ? "bg-accent shadow-sm shadow-secondary" : "bg-white"} w-fit h-fit py-1 px-2 rounded-full select-none cursor-pointer`} onClick={() => setFilterBuildings(!filterBuildings)}>
-							<p>Buildings</p>
+						<div className="w-fit h-fit py-1 px-2 bg-slate-200 rounded-full select-none cursor-pointer shadow-md">
+							<p>The Forum</p>
 						</div>
 					</div>
 				</div>
-
-
 			</div>
+
+			{/* <div className="w-full h-fit px-[15%] pt-12">
+				<h1 className="text-2xl font-extrabold">Select University</h1>
+
+				<div className="snap-mandatory snap-x overflow-scroll w-full h-fit flex justify-start items-center gap-4 scroll-smooth pt-2">
+					{
+						[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((uni, index) => {
+							return (
+								<div key={index} className="snap-always snap-center min-w-60 aspect-square bg-white p-2 rounded-md shadow-md hover:-translate-y-2 cursor-pointer transition-all duration-200" onClick={() => setUniversity({ name: `University ${uni}`, description: "Description" })}>
+									<h1 className="text-xl font-extrabold">University {uni}</h1>
+									<p className="text-sm font-extralight">Description</p>
+								</div>
+							)
+						})
+					}
+				</div>
+			</div>
+
+			<div className="w-full h-fit px-[15%] pt-12">
+				<h1 className="text-2xl font-extrabold">Select Building</h1>
+
+				<div className="snap-mandatory snap-x overflow-scroll w-full h-fit flex justify-start items-center gap-4 scroll-smooth pt-2 ">
+					{
+						[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((uni, index) => {
+							return (
+								<div key={index} className="snap-always snap-center min-w-60 aspect-square bg-white p-2 rounded-md shadow-md hover:-translate-y-2 cursor-pointer transition-all duration-200" onClick={() => setBuilding({ name: `Building ${uni}`, description: "Description" })}>
+									<h1 className="text-xl font-extrabold">Building {uni}</h1>
+									<p className="text-sm font-extralight">Description</p>
+								</div>
+							)
+						})
+					}
+				</div>
+			</div> */}
+
+
 
 			<div className="w-full h-full px-[15%] pt-12">
 				<h1 className="text-2xl font-extrabold">Results</h1>
 
-				{/* filters */}
-				<div className="flex gap-2 ">
-					{
-						filterUniversities && (
-							<p className="w-fit px-2 py-1 bg-red-500 rounded-full text-sm font-extralight text-white">Universities</p>
-						)
-					}
+				{/* empty */}
+				{
+					results.length === 0 && (
+						<div className="w-full h-full flex flex-col justify-center items-center py-[5%]">
+							<Loading message="No results found"/>
+						</div>
+					)
+				}
 
-					{
-						filterBuildings && (
-							<p className="w-fit px-2 py-1 bg-red-500 rounded-full text-sm font-extralight text-white">Buildings</p>
-						)
-					}
-
-					{
-						(!filterBuildings && !filterUniversities) && (
-							<p>no filters</p>
-						)
-					}
-				</div>
 
 				{/* show the results */}
 				<div className="w-full h-fit flex flex-col gap-2">

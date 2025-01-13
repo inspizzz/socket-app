@@ -1,12 +1,19 @@
+'use client'
 
-/**
- * This page shows a universities available rooms, should show a simple list of names and building name ...
- * 
- * TODO: Add versatility to incorporate a map and hovereable sections for user friendliness
- */
-export default function RoomsPage() {
+import { useEffect } from "react"
+
+export default function RoomsPage({ params }) {
+
+	// get the rooms information
+	const [rooms, setRooms] = useState([])
+
+	// get all rooms currently stored in the database
+	useEffect(() => {
+
+	})
+
 	return (
-		<div className="w-full h-screen">
+		<div>
 			<h1>Rooms Page</h1>
 		</div>
 	)
