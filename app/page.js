@@ -79,7 +79,7 @@ export default function Home() {
 
 					<div className="w-1/2">
 						<h1 className="text-8xl font-extrabold">Study <span className="text-primary">more</span></h1>
-						<h1 className="text-8xl font-extrabold pl-16"><span className="text-accent">less</span> worry</h1>
+						<h1 className="text-8xl font-extrabold pl-16"><span className="text-accent">worry</span> less</h1>
 					</div>
 				</div>
 
