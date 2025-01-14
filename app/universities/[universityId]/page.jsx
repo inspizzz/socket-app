@@ -40,6 +40,7 @@ export default function UniversityPage({ params }) {
 		// get all the buildings in the university
 		getBuildings().then((data) => {
 			setBuildings(data)
+			setLoadingBuildings(false)
 		}).catch((error) => {
 			setError(true)
 			setLoadingBuildings(false)
@@ -48,85 +49,71 @@ export default function UniversityPage({ params }) {
 
 	//
 	return (
-		<div className="w-full h-screen flex justify-center items-center">
-			<div className="w-1/4 h-fit shadow-xl flex justify-start items-center">
-				{
-					!loadingUniversity ? (
-						<div className="w-full h-full">
-							{
-								Object.keys(university).length > 0 ? (
-									<div className="w-full h-full px-[10%] py-[10%] flex flex-col gap-2">
-										<div className="w-full h-fit flex justify-between items-center px-[5%]">
-											<h1 className="text-xl font-extrabold">{university.name}</h1>
-											<CiBacon className="aspect-square h-full cursor-pointer" />
-										</div>
+		<div className="w-full h-fit flex flex-col px-[15%]">
+			<Image src="/exeter-banner.webp" width={1000} height={500} className="min-w-full h-1/3 object-cover" alt="a" />
 
-										<Image src="/exeter-banner.webp" width={1000} height={500} className="w-full h-1/3 object-cover top-0 left-0 rounded-xl" alt="a" />
+			<div className="w-full h-fit">
+				<div className="w-full h-full flex justify-between items-center border-b-[1px] bg-white">
+					<div className="w-fit h-full flex justify-start items-center gap-16">
+						<h1 className="text-2xl font-extrabold p-2 py-1 ">University of Exeter</h1>
 
-										{/* some statistics */}
-										<div>
-											{/* <h1 className="text-md font-normal flex justify-start items-center gap-2"><IoAnalytics /> Statistics</h1> */}
+						<div className="w-fit h-full flex justify-center items-center gap-2">
+							<p className="font-normal">Buildings</p>
 
-											<div className="w-full h-fit flex justify-evenly items-center gap-3">
-												{/* under maintenance */}
-												<div className="w-full h-fit p-4 rounded-md shadow-md flex flex-col">
-													<h1 className="text-nowrap text-sm font-bold">Statistics Under Maintenance</h1>
+							<div className="min-w-[1px] min-h-6  self-center border-l-[1px] border-slate-400 " />
 
-													<LuConstruction className="self-center " />
-												</div>
-												{/* <div className="w-full max-h-full aspect-square bg-slate-200 p-4 rounded-md shadow-md">
-													<h1 className="text-nowrap text-sm font-bold">Total reports</h1>
-
-													<div className="w-full h-fit flex justify-center items-center">
-														<p>10</p>
-													</div>
-												</div>
-
-												<div className="w-full h-full aspect-square bg-slate-200 p-4 rounded-md shadow-md">
-													<h1 className="text-nowrap text-sm font-bold">Time Series</h1>
-
-													<GrAnalytics className="w-fit h-fit" />
-												</div>
-
-												<div className="w-full h-full aspect-square bg-slate-200 p-4 rounded-md shadow-md">
-												</div> */}
-											</div>
-
-											{/* buildings to select */}
-											<div className="w-full h-fit">
-												<h1 className="text-md font-normal">Buildings</h1>
-
-												<div className="w-full h-fit flex gap-3 overflow-x-scroll overflow-hidden no-scrollbar py-2">
-													{
-														buildings.map((building, id) => {
-															return (
-																<Link href={`/buildings/${building.id}`} key={id} className="w-20 aspect-square bg-slate-100 shadow-md rounded-xl flex justify-center items-center transition-all duration-200 hover:-translate-y-2 cursor-pointer">
-																	<p className="text-sm">{building.name}</p>
-																</Link>
-															)
-														})
-													}
-												</div>
-											</div>
-										</div>
-									</div>
-								) : (
-									<div className="w-full h-full flex flex-col justify-center items-center">
-										<SiMariadbfoundation className="w-8 h-8" />
-										<p>Error not found</p>
-									</div>
-								)
-							}
+							<p>Something</p>
 						</div>
-					) : (
-						<div className="self-center w-full">
-							<Loading message="loading university" />
-						</div>
+					</div>
 
-					)
-				}
+
+					<h1 className="text-lg font-light p-2 py-1">0 Reports</h1>
+				</div>
+
+
+
+				{/* <div className="w-full h-fit grid grid-cols-5 grid-rows-2 gap-4 py-8">
+					<div className="col-start-1 row-start-1 aspect-square bg-white shadow-md rounded-md flex justify-center items-center">1</div>
+					<div className="col-start-1 row-start-2 aspect-square bg-white shadow-md rounded-md flex justify-center items-center">2</div>
+					<div className="col-start-2 row-start-1 aspect-square bg-white shadow-md rounded-md flex justify-center items-center">3</div>
+					<div className="col-start-2 row-start-2 aspect-square bg-white shadow-md rounded-md flex justify-center items-center">4</div>
+					<div className="col-span-3 row-span-2 col-start-3 row-start-1 bg-white shadow-md rounded-md flex flex-col justify-start  p-2">
+						<h1 className="text-2xl font-extrabold">University of Exeter Reports</h1>
+						
+					</div>
+				</div> */}
+
+				<div className="w-full h-fit pt-8 pb-8">
+					<h1 className="text-2xl font-extrabold">Buildings</h1>
+
+					{
+						loadingBuildings && <Loading message="loading buildings" />
+					}
+
+					{
+						(buildings.length === 0 && !loadingBuildings) && <p>No buildings found</p>
+					}
+
+					{
+						buildings.map((building, id) => {
+							return (
+								<Link key={id} href={`/buildings/${building.id}`} className="w-full h-fit flex justify-start items-center gap-4 bg-slate-100 shadow-md rounded-md p-2 mt-2">
+									<div className="w-1/6 h-full flex justify-center items-center">
+										<SiMariadbfoundation size={32} />
+									</div>
+
+									<div className="w-5/6 h-full flex flex-col justify-center items-start">
+										<h1 className="text-lg font-extrabold">{building.name}</h1>
+										<p className="text-sm font-light">{building.description}</p>
+									</div>
+								</Link>
+							)
+						})
+					}
+				</div>
+
 			</div>
-
 		</div >
 	)
 }
+
