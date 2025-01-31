@@ -137,6 +137,17 @@ export async function createSuggestion(text) {
 	}
 }
 
+export async function subscribeNewsletter(email) {
+	try {
+		const docRef = await addDoc(collection(db, "newsletter"), {
+			email: email
+		})
+		return true
+	} catch (e) {
+		return false
+	}
+}
+
 /**
  * This function increments the counter on the sockets document
  * 
