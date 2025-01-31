@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react"
 import { SiMariadbfoundation } from "react-icons/si";
-import { IoIosTrendingUp } from "react-icons/io";
+import { LuConstruction } from "react-icons/lu";
 
 
 
@@ -67,15 +67,15 @@ export default function ReportSocketPage({ params }) {
 		console.log("reported")
 
 		// perform reporting logic here
-		
+
 
 		// show the user a thank you
 		setSubmitted(true)
 	}
 
 	return (
-		<div className="w-full h-screen flex justify-center items-center">
-			<div className="w-1/5 h-1/2 shadow-xl flex justify-start items-center">
+		<div className="w-full md:min-h-screen max-md-min-h-[90%] flex justify-center items-center">
+			<div className="w-1/5 h-full max-md:w-full max-md:h-[95vh] shadow-xl flex justify-start items-center">
 				{
 					!socketLoading ? (
 						<div className="w-full h-full">
@@ -90,57 +90,57 @@ export default function ReportSocketPage({ params }) {
 															<div className="w-full h-full">
 																{
 																	!submitted ? (
-																		<div className="w-full h-full flex flex-col justify-between pt-4">
-																			<div className="w-full h-fit flex justify-center items-center gap-2">
-																				<Image src="/exeter.webp" height={100} width={100} className="w-full h-full max-w-8 max-h-8 aspect-square object-contain" alt="" />
-																				<h1 className="text-xl font-bold">{university.name}</h1>
-																			</div>
+																		<div className="w-full h-full flex flex-col justify-between gap-4 pt-4">
 
-																			<div className="w-full h-fit flex gap-2 px-[5%]">
-																				<div className="w-full min-h-fit aspect-square shadow-md p-2 flex flex-col justify-start items-center">
-																					<div className="w-full h-fit">
-																						<h1>Total Reports</h1>
-																					</div>
-
-																					<div className="w-full h-full flex justify-center items-center gap-1">
-																						<p>0</p>
-																						<IoIosTrendingUp />
-																					</div>
+																			<div className="flex flex-col gap-4">
+																				<div className="w-full h-fit flex justify-center items-center gap-2">
+																					<Image src="/exeter.webp" height={100} width={100} className="w-full h-full max-w-8 max-h-8 aspect-square object-contain" alt="" />
+																					<h1 className="text-xl font-bold">{university.name}</h1>
 																				</div>
 
-																				<div className="w-full min-h-fit aspect-square shadow-md p-2 flex flex-col justify-start items-center">
-																					<div className="w-full h-fit">
-																						<h1>Total Reports</h1>
-																					</div>
-
-																					<div className="w-full h-full flex justify-center items-center gap-1">
-																						<p>0</p>
-																						<IoIosTrendingUp />
+																				<div className="w-full h-fit flex gap-2 px-[5%]">
+																					<div className="w-full min-h-fit aspect-video shadow-md p-2 flex flex-col justify-center items-center">
+																						<h1 className="flex gap-2 justify-center items-center">Start scanning to show graph! <LuConstruction /></h1>
 																					</div>
 																				</div>
 																			</div>
 
-																			<div className="w-full h-fit px-[5%]">
-																				<div className="w-full shadow-md p-2">
-																					<h1>You are in <b>{building.name}</b> building</h1>
-																					<h1>You are in <b>{room.name}</b> room</h1>
+																			<div className="flex flex-col gap-4">
+																				<div className="w-full h-fit px-[5%]">
+																					<div className="w-full shadow-md p-2">
+																						<h1>You are in <b>{building.name}</b> building</h1>
+																						<h1>You are in <b>{room.name}</b> room</h1>
+																					</div>
 																				</div>
-																			</div>
 
-																			<button className="w-full h-12 bg-primary" onClick={() => report()}>
-																				<p className="text-xl font-extrabold text-white">Report</p>
-																			</button>
+
+																				<div className="w-full h-fit px-[5%]">
+																					<div className="w-full shadow-md p-2">
+																						<h1>Press the button below to report the socket you scanned as faulty!</h1>
+																					</div>
+																				</div>
+
+
+																				<button className="w-full h-12 bg-primary self-end" onClick={() => report()}>
+																					<p className="text-xl font-extrabold text-white">Report</p>
+																				</button>
+																			</div>
 																		</div>
 																	) : (
-																		<div className="w-full h-full flex flex-col justify-center items-center">
-																			<div className="w-full h-full flex flex-col justify-center items-center">
+																		<div className="w-full min-h-full flex flex-col justify-between items-center">
+																			<div className="flex flex-col w-full h-full justify-center items-center self-center py-32">
+																				<SiMariadbfoundation className="w-8 h-8" />
 																				<p className="font-extrabold text-3xl">Thank you</p>
+																			</div>
 
-																				<div className="w-full h-fit flex gap-1 justify-center items-center">
-																					<p className="text-slate-300 text-sm underline cursor-pointer" onClick={() => setSubmitted(false)}>Report Again</p>
-																					<div />
-																					<Link href="/" className="text-slate-300 text-sm underline cursor-pointer">Home</Link>
-																				</div>
+
+																			<div className="w-full h-fit flex flex-col justify-center items-center self-end">
+																				<Link href="/report" className="w-full h-12 bg-primary flex justify-center items-center">
+																					<p className="text-xl font-extrabold text-white">Report Again</p>
+																				</Link>
+																				<Link href="/" className="w-full h-12 bg-secondary flex justify-center items-center">
+																					<p className="text-xl font-extrabold text-white">Home</p>
+																				</Link>
 																			</div>
 																		</div>
 																	)
@@ -153,7 +153,6 @@ export default function ReportSocketPage({ params }) {
 															</div>
 														)
 													}
-
 												</div>
 											) : (
 												<div className="self-center w-full h-full flex justify-center items-center">
@@ -161,8 +160,6 @@ export default function ReportSocketPage({ params }) {
 												</div>
 											)
 										}
-
-
 									</div>
 								) : (
 									<div className="w-full h-full flex flex-col justify-center items-center">

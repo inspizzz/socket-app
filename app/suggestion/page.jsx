@@ -34,13 +34,13 @@ export default function SuggestionPage() {
 	}
 
 	return (
-		<div className="w-full h-screen flex justify-center items-center">
+		<div className="w-full h-screen max-md:h-[95vh] flex justify-center items-center">
 			{
 				!submitting ? (
 					<div className="w-full h-full flex justify-center items-center">
 						{
 							!submitted ? (
-								<form className="w-1/4 h-fit shadow-xl bg-white flex flex-col justify-start items-center pt-4" onSubmit={submit}>
+								<form className="w-1/4 max-md:w-full h-fit max-md:h-full shadow-xl bg-white flex flex-col justify-start items-center pt-4" onSubmit={submit}>
 									<h1 className="text-xl font-extrabold">Suggestion / Bug Report</h1>
 
 									<div className="w-full h-fit flex flex-col gap-2 p-2">
@@ -52,7 +52,7 @@ export default function SuggestionPage() {
 								<div className="w-full h-full flex flex-col justify-center items-center">
 									{
 										!error ? (
-											<div className="w-1/4 h-fit shadow-xl bg-white flex flex-col justify-start items-center p-4">
+											<div className="w-1/4 max-md:w-full h-fit max-md:h-full shadow-xl bg-white flex flex-col justify-start max-md:justify-center items-center p-4">
 												<h1 className="text-xl font-extrabold">Thank you for your feedback!</h1>
 
 												<div className="w-full h-fit flex gap-2">
@@ -69,7 +69,7 @@ export default function SuggestionPage() {
 												</div>
 											</div>
 										) : (
-											<div className="w-1/4 h-fit shadow-xl bg-white flex flex-col justify-start items-center p-2">
+											<div className="w-1/4 max-md:w-full h-fit max-md:h-full shadow-xl bg-white flex flex-col justify-start items-center p-2">
 												<div className="w-full flex justify-start">
 													<button className="px-2 py-1 rounded-full bg-red-400" onClick={() => {setError(false); setContent(""); setSubmitted(false)}}>
 														<p>Try again</p>

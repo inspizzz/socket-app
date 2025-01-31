@@ -40,13 +40,13 @@ export default function Home() {
 						<Image src="/plug.avif" width={500} height={500} className="w-full h-fit object-contain top-0 left-0" alt="a" />
 					</div>
 
-					<div className="w-1/2 flex flex-col gap-8">
+					<div className="w-1/2 flex flex-col gap-8 max-md:gap-2">
 						<div>
-							<h1 className="text-8xl font-extrabold">Study <span className="text-primary">more</span></h1>
-							<h1 className="text-8xl font-extrabold pl-16"><span className="text-accent">worry</span> less</h1>
+							<h1 className="text-8xl max-md:text-2xl font-extrabold">Study <span className="text-primary">more</span></h1>
+							<h1 className="text-8xl max-md:text-2xl font-extrabold pl-16 max-md:pl-8 text-nowrap"><span className="text-accent">worry</span> less</h1>
 						</div>
 
-						<button className="w-fit h-fit px-4 py-2 bg-primary rounded-full text-2xl font-extrabold text-white hover:animate-pulse">Scan me!</button>
+						<button className="w-fit h-fit px-4 py-2 bg-primary rounded-full text-2xl max-md:text-sm font-extrabold text-white hover:animate-pulse">Scan me!</button>
 					</div>
 				</div>
 

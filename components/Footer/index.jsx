@@ -27,7 +27,7 @@ export function Footer() {
 	return (
 		<footer className="text-white">
 			<div className="w-full h-full px-[15%] flex flex-col justify-between gap-5 bg-slate-900 py-[5%]">
-				<div className="w-full h-full flex justify-between">
+				<div className="w-full h-full flex max-md:flex-col justify-between">
 					<div className="w-full flex flex-col ">
 						<div className="w-full h-fit flex justify-start bg-slate-900 gap-8 pb-16 text-slate-400">
 
@@ -44,8 +44,8 @@ export function Footer() {
 
 							<div className="flex flex-col gap-1 w-fit h-full">
 								<p className="text-white">More To Explore</p>
-								<Link href="https://excs.uk" className="underline">Exeter Computer Science Society</Link>
-								<Link href="https://hack-south-west.excs.uk" className="underline">Hack South West</Link>
+								<Link href="https://excs.uk" className="underline">EXCS</Link>
+								<Link href="https://hack-south-west.excs.uk" className="underline">HSW</Link>
 								<Link href="https://mysoc.uk" className="underline">MySoc</Link>
 							</div>
 						</div>
@@ -54,7 +54,7 @@ export function Footer() {
 					<div className="w-full h-full flex flex-col justify-center items-center">
 						<div className="flex flex-col justify-center items-start">
 							<h1 className="text-2xl font-extrabold">Never Miss Out</h1>
-							<p className="font-extralight text-gray-500">Sign up to our newsletter to keep up to date with updates and changes, we will not try and sell anything to you or sell your data!</p>
+							<p className="font-extralight text-gray-500">Sign up to our newsletter, we will not sell your data, nor email you too often!</p>
 
 							<form className="w-full flex flex-col gap-1" onSubmit={(e) => submitNewsletter(e)}>
 								<div>
@@ -63,7 +63,7 @@ export function Footer() {
 								</div>
 
 								<div className="w-full h-fit flex gap-4">
-									<button className="w-1/4 h-fit bg-primary">
+									<button className="w-fit h-fit bg-primary">
 										<p className="px-2 py-1 hover:bg-primary w-full">Sign Up :)</p>
 									</button>
 
@@ -92,7 +92,7 @@ export function Footer() {
 				<div className="w-full h-fit flex justify-between items-center">
 					<p className="text-slate-400">@2025 QPlug inc</p>
 
-					<div className="flex gap-1">
+					{/* <div className="flex gap-1">
 						<Link href="https://www.linkedin.com/in/wiktor-inc/" className="underline">
 							<CiLinkedin className="w-6 h-6 text-slate-400" />
 						</Link>
@@ -100,7 +100,7 @@ export function Footer() {
 						<Link href="https://www.linkedin.com/in/wiktor-inc/" className="underline">
 							<CiLinkedin className="w-6 h-6 text-slate-400" />
 						</Link>
-					</div>
+					</div> */}
 				</div>
 			</div>
 
