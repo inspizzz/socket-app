@@ -21,17 +21,13 @@ export function TopBar() {
 		<div className="w-full h-12 border border-b-text px-[15%] py-1 flex justify-between">
 			<div className="flex justify-center items-center gap-4">
 				<Link href={"/"} className="flex justify-center items-center text-2xl font-extrabold"><span className="text-accent">Q</span><span className="text-secondary">Plug</span></Link>
-				<Link href="/universities"><FaUniversity /></Link>
-				<Link href="/buildings"><FaRegBuilding /></Link>
-				<Link href="/rooms"><FaDoorOpen /></Link>
-				<Link href="/sockets"><FaPlug /></Link>
 			</div>
 
 
 
 
 			<div className="flex justify-center items-center gap-4">
-				<Link className="" href="/search"><CiSearch className="w-8 h-8" /></Link>
+				{/* <Link className="" href="/search"><CiSearch className="w-8 h-8" /></Link> */}
 				<Link className="" href="/report"><CiWarning className="w-8 h-8" /></Link>
 				{/* <Button1 href="/rooms">
 					<p className="text-xl font-extralightx text-text_reverse p-1">Rooms</p>

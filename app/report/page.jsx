@@ -30,26 +30,29 @@ export default function ReportSocket() {
 	}, [result])
 
 	return (
-		<div className="w-full h-screen flex flex-col justify-center items-center">
+		<div className="w-full h-screen max-md:h-[95vh] flex flex-col justify-center items-center">
 			{
 				!result ? (
 					<div className="w-full h-full flex justify-center items-center">
 						{
 							scanning ? (
-								<div className="w-1/4 h-fit shadow-xl bg-white flex flex-col justify-start items-center">
-									<div className="w-full h-fit">
-										<div className="w-full h-fit p-8 flex flex-col gap-4">
-											<div>
-												<h1 className="text-xl font-extrabold self-start">Please scan qr code</h1>
-												<p className="text-sm font-extralight self-start text-slate-400">This can be found on the sticker next to the faulty socket, please allow a little time to allow your camera to capture it :)</p>
-											</div>
-										</div >
+								<div className="w-1/4 max-md:w-full h-fit max-md:h-full shadow-xl bg-white flex flex-col justify-start items-center">
+									<div className="w-full h-full flex justify-between flex-col">
 
-										<div className="w-full h-fit">
-											<QrReader setResult={setResult} />
+										<div>
+											<div className="w-full h-fit p-8 flex flex-col gap-4">
+												<div>
+													<h1 className="text-xl font-extrabold self-start">Please scan qr code</h1>
+													<p className="text-sm font-extralight self-start text-slate-400">This can be found on the sticker next to the faulty socket, please allow a little time to allow your camera to capture it :)</p>
+												</div>
+											</div >
+
+											<div className="w-full h-fit">
+												<QrReader setResult={setResult} />
+											</div>
 										</div>
 
-										<div className="w-full h-fit bg-slate-200 flex flex-col justify-center items-center">
+										<div className="w-full h-fit bg-slate-200 flex flex-col justify-center items-center self-end">
 											<p className="py-3 text-slate-400 font-extralight">Want to try manually? <span className="font-normal underline text-slate-400 cursor-pointer" onClick={() => setScanning(false)}>Enter</span></p>
 											<div className="w-full h-[1px] border-b-[1px] border-slate-100" />
 
@@ -61,8 +64,8 @@ export default function ReportSocket() {
 									</div >
 								</div >
 							) : (
-								<div className="w-1/4 h-fit shadow-xl bg-white flex flex-col justify-start items-center">
-									<div className="w-full h-fit p-8 flex flex-col gap-4">
+								<div className="w-1/4 max-md:w-full h-fit max-md:h-full shadow-xl bg-white flex flex-col justify-start items-center">
+									<div className="w-full h-full p-8 flex flex-col gap-4">
 										<div>
 											<h1 className="text-xl font-extrabold self-start">Please enter socket id</h1>
 											<p className="text-sm font-extralight self-start text-slate-400">This can be found on the sticker next to the faulty socket and you can use either long or short socket identifier.</p>
