@@ -137,4 +137,13 @@ export async function createSuggestion(text) {
 	}
 }
 
+/**
+ * This function increments the counter on the sockets document
+ * 
+ * @param {*} socketId the socket to be incremented
+ */
+export async function reportSocket(socketId) {
+
+}
+
 export { auth, db }

@@ -70,8 +70,9 @@ export default function Home() {
 
 	return (
 
-		<div className="snap-mandatory snap-y overflow-scroll w-full h-[95vh] flex flex-col justify-start items-center no-scrollbar scroll-smooth">
-			<div className="snap-always snap-center flex-shrink-0 flex flex-col justify-center items-center w-full h-full px-[15%]" id="page-1" ref={(el) => (sections.current[0] = el)}>
+		// snap-mandatory snap-y overflow-scroll
+		<div className="w-full h-fit flex flex-col justify-start items-center no-scrollbar scroll-smooth">
+			<div className="snap-always snap-center flex-shrink-0 flex flex-col justify-center items-center w-full h-screen px-[15%]" id="page-1" ref={(el) => (sections.current[0] = el)}>
 				<div className="flex justify-center items-center w-full h-full">
 					<div className="w-1/3">
 						<Image src="/plug.avif" width={500} height={500} className="w-full h-fit object-contain top-0 left-0" alt="a" />
@@ -89,7 +90,7 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div className="snap-always snap-center flex-shrink-0 flex gap-16 justify-center items-center w-full h-full px-[15%]" id="page-2" ref={(el) => (sections.current[1] = el)}>
+			<div className="snap-always snap-center flex-shrink-0 flex gap-16 justify-center items-center w-full h-screen px-[15%]" id="page-2" ref={(el) => (sections.current[1] = el)}>
 				<div className="w-1/2 flex flex-col justify-center items-start">
 					<div id="university-container" className="*:fade-in-container w-full h-full">
 						<h1 className="text-4xl pb-8 font-bold animate-appear">Our partnering universities</h1>
@@ -112,7 +113,7 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div className="snap-center flex-shrink-0 w-full h-full">
+			<div className="snap-center flex-shrink-0 w-full h-screen">
 				<div className="w-full h-1/2 flex gap-16 bg-primary px-[15%] pt-32 pb-16">
 
 					<div className="w-full flex justify-center items-center">
@@ -152,6 +153,20 @@ export default function Home() {
 						<hr className="w-full" />
 						<p className="text-center">We aim to help both students and university staff with identifying faulty plug sockets using this platform as a means for open communication about this issue.</p>
 					</div>
+				</div>
+			</div>
+
+
+			<div className="snap-center flex flex-shrink-0 w-full h-screen">
+
+				{/* key events panel */}
+				<div className="min-w-1/4 h-full border-r-accent shadow-md shadow-accent">
+
+				</div>
+
+				<div className="w-full h-full flex flex-start items-center p-8">
+					<p>This is in the center</p>
+
 				</div>
 			</div>
 

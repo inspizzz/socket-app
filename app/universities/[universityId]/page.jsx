@@ -58,7 +58,7 @@ export default function UniversityPage({ params }) {
 						<h1 className="text-2xl font-extrabold p-2 py-1 ">University of Exeter</h1>
 
 						<div className="w-fit h-full flex justify-center items-center gap-2">
-							<p className="font-normal">Buildings</p>
+							<Link href={`/buildings/?university=${university.id}`} className="font-normal">Buildings</Link>
 
 							<div className="min-w-[1px] min-h-6  self-center border-l-[1px] border-slate-400 " />
 
@@ -69,7 +69,6 @@ export default function UniversityPage({ params }) {
 
 					<h1 className="text-lg font-light p-2 py-1">0 Reports</h1>
 				</div>
-
 
 
 				{/* <div className="w-full h-fit grid grid-cols-5 grid-rows-2 gap-4 py-8">

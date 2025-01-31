@@ -66,7 +66,7 @@ export function QrReader({ setResult }) {
 
 	return (
 		<div className='relative w-full min-h-fit flex flex-col justify-center items-center'>
-			<video ref={videoRef} className="min-w-full min-h-full" />
+			<video ref={videoRef} className={`min-w-full min-h-full ${(!loading && !isCameraEnabled) ? "hidden" : "flex" }`} />
 			{
 				!loading ? (
 					<div>
