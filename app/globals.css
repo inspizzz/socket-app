@@ -2,53 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-    --background: #e3e3e3;
-    --primary: #494c50;
-    --secondary: #160094;
-    --accent: #2929d6;
-    --text: #000000;
-	--text-reverse: #FFFFFF;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #1c1c1c;
-        --primary: #afb2b6;
-        --secondary: #816bff;
-        --accent: #2929d6;
-        --text: #FFFFFF;
-		--text-reverse: #000000
-    }
-} */
-
 :root {
-    /* --background: #f7f7f7;
-    --primary: #ffe100;
-    --secondary: #ffd624;
-    --accent: #cc8e00;
-    --text: #757f53;
-	--text-reverse: #a1ac80; */
-	--background: #f7f7f7;
+    --background: #f4f4f4;
     --primary: #67849e;
     --secondary: #aabed1;
     --accent: #81a6c7;
     --text: #060606;
-	--text-reverse: #fafafa;
+    --text-reverse: #fafafa;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #020303;
-        --primary: #617f98;
-        --secondary: #2e4356;
-        --accent: #395e7f;
-        --text: #fafafa;
-		--text-reverse: #060606;
+        --background: #f4f4f4;
+        --primary: #67849e;
+        --secondary: #aabed1;
+        --accent: #81a6c7;
+        --text: #060606;
+        --text-reverse: #fafafa;
     }
 }
-
-
 
 body {
     color: var(--foreground);
@@ -59,7 +31,7 @@ body {
 /* width */
 ::-webkit-scrollbar {
     width: 8px;
-	height: 8px;
+    height: 8px;
 }
 
 /* Track */
@@ -78,58 +50,57 @@ body {
     background: #555;
 }
 
-
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
-.fade-in-container>* {
+.fade-in-container > * {
     /* opacity: 0; */
-    animation: fadeIn .4s forwards
+    animation: fadeIn 0.4s forwards;
 }
 
-.fade-in-container>:first-child {
-    animation-delay: 0s
+.fade-in-container > :first-child {
+    animation-delay: 0s;
 }
 
-.fade-in-container>:nth-child(2) {
-    animation-delay: .05s
+.fade-in-container > :nth-child(2) {
+    animation-delay: 0.05s;
 }
 
-.fade-in-container>:nth-child(3) {
-    animation-delay: .1s
+.fade-in-container > :nth-child(3) {
+    animation-delay: 0.1s;
 }
 
-.fade-in-container>:nth-child(4) {
-    animation-delay: .15s
+.fade-in-container > :nth-child(4) {
+    animation-delay: 0.15s;
 }
 
-.fade-in-container>:nth-child(5) {
-    animation-delay: .2s
+.fade-in-container > :nth-child(5) {
+    animation-delay: 0.2s;
 }
 
-.fade-in-container>:nth-child(6) {
-    animation-delay: .25s
+.fade-in-container > :nth-child(6) {
+    animation-delay: 0.25s;
 }
 
-.fade-in-container>:nth-child(7) {
-    animation-delay: .3s
+.fade-in-container > :nth-child(7) {
+    animation-delay: 0.3s;
 }
 
-.fade-in-container>:nth-child(8) {
-    animation-delay: .35s
+.fade-in-container > :nth-child(8) {
+    animation-delay: 0.35s;
 }
 
-.fade-in-container>:nth-child(9) {
-    animation-delay: .4s
+.fade-in-container > :nth-child(9) {
+    animation-delay: 0.4s;
 }
 
-.fade-in-container>:nth-child(10) {
-    animation-delay: .45s
+.fade-in-container > :nth-child(10) {
+    animation-delay: 0.45s;
 }

@@ -34,7 +34,7 @@ export default function SuggestionPage() {
 	}
 
 	return (
-		<div className="w-full h-screen max-md:h-[95vh] flex justify-center items-center">
+		<div className="w-full h-screen flex justify-center items-center pt-12">
 			{
 				!submitting ? (
 					<div className="w-full h-full flex justify-center items-center">
